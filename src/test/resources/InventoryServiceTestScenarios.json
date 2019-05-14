@@ -1,0 +1,49 @@
+  {
+	"inventoryServiceDataList": [
+		{
+			"scenarioId": "IST01",
+			"scenario": "testGetInventoriesDefaultBehaviour",
+			"inputParameters": [],
+			"mockedData": [
+				{
+					"id": 1			
+				}
+			],
+			"expectedOutput": [
+				{
+					"newProduct": {
+						"productId": 1
+					}				
+				}
+			]
+		},
+		{
+			"scenarioId": "IST02",
+			"scenario": "testGetInventoriesNoProducts",
+			"inputParameters": [],
+			"mockedData": [],
+			"expectedOutput": []
+		},
+		{
+			"scenarioId": "IST03",
+			"scenario": "testGetInventoriesWithInventories",
+			"inputParameters": [],
+			"mockedData": [
+				{
+					"inventories": [{
+						"quantity": 10,
+						"inventoryType": "C"
+					}, {
+						"quantity": 10,
+						"inventoryType": "D"
+					}]
+				}
+			],
+			"expectedOutput": [
+				{
+					"quantity": 0
+				}
+			]
+		}
+	]
+}

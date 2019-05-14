@@ -1,0 +1,192 @@
+  {
+	"customerServiceDataList": [
+		{
+			"scenarioId": "CST01",
+			"scenario": "testGetAllCustomersDefaultBehaviour",
+			"inputParameters": [],
+			"mockedData": [
+				{
+					"id": 1,
+					"name": "Anindya",
+					"fatherName": "Ratan",
+					"address": "22222hkhaskh",
+					"contactNumber": "868686876",
+					"loans": [
+						{"amount": 10.0}]
+				},
+				{
+					"id": 2,
+					"name": "Anindya2",
+					"fatherName": "Ratan2",
+					"address": "22222hkhaskh",
+					"contactNumber": "8686868762"
+				}
+			],
+			"expectedOutput": [
+				{
+					"customerId": 1,
+					"customerName": "Anindya",
+					"fatherName": "Ratan",
+					"address": "22222hkhaskh",
+					"contactNumber": "868686876",
+					"loan": 0.0,
+					"customerTransactionByDay": 0.0,
+					"customerTransactionByMonth": 0.0,
+					"customerTransactionByYear": 0.0,
+					"customerMostBought": ""
+				}
+			]
+		},
+		{
+			"scenarioId": "CST02",
+			"scenario": "testGetAllCustomersForNoCustomers",
+			"inputParameters": [],
+			"mockedData": [],
+			"expectedOutput": []
+		},
+		{
+			"scenarioId": "CST03",
+			"scenario": "testGetAllCustomersForMaxResults",
+			"inputParameters": [],
+			"mockedData": [
+				{
+					"id": 1,
+					"name": "Anindya",
+					"fatherName": "Ratan",
+					"address": "22222hkhaskh",
+					"contactNumber": "868686876"
+				},
+				{
+					"id": 2,
+					"name": "Anindya2",
+					"fatherName": "Ratan2",
+					"address": "22222hkhaskh",
+					"contactNumber": "8686868762"
+				}
+			],
+			"expectedOutput": [
+				{
+					"customerId": 1,
+					"customerName": "Anindya",
+					"fatherName": "Ratan",
+					"address": "22222hkhaskh",
+					"contactNumber": "868686876",
+					"loan": 0.0,
+					"customerTransactionByDay": 0.0,
+					"customerTransactionByMonth": 0.0,
+					"customerTransactionByYear": 0.0,
+					"customerMostBought": ""
+				},
+				{
+					"customerId": 2,
+					"customerName": "Anindya",
+					"fatherName": "Ratan",
+					"address": "22222hkhaskh",
+					"contactNumber": "868686876",
+					"loan": 0.0,
+					"customerTransactionByDay": 0.0,
+					"customerTransactionByMonth": 0.0,
+					"customerTransactionByYear": 0.0,
+					"customerMostBought": ""
+				}
+			]
+		},
+		{
+			"scenarioId": "CST05",
+			"scenario": "testGetCustomersByContactNumberForDefaultBeahaviour",
+			"inputParameters": [{"criteriaName": "contactNumber", "criteriaValue": "868686876"}],
+			"mockedData": [
+				{
+					"id": 1,
+					"name": "Anindya",
+					"fatherName": "Ratan",
+					"address": "22222hkhaskh",
+					"contactNumber": "868686876"
+				}
+			],
+			"expectedOutput": [
+				{
+					"customerId": 1,
+					"customerName": "Anindya",
+					"fatherName": "Ratan",
+					"address": "22222hkhaskh",
+					"contactNumber": "868686876",
+					"loan": 0.0,
+					"customerTransactionByDay": 0.0,
+					"customerTransactionByMonth": 0.0,
+					"customerTransactionByYear": 0.0,
+					"customerMostBought": ""
+				}
+			]
+		},
+		{
+			"scenarioId": "CST05",
+			"scenario": "testGetAllCustomersForLoans",
+			"inputParameters": [],
+			"mockedData": [
+				{
+					"id": 1,
+					"name": "Anindya",
+					"fatherName": "Ratan",
+					"address": "22222hkhaskh",
+					"contactNumber": "868686876",
+					"loans": [
+						{"amount": 10.0}, {"amount": 5.0}
+					]
+				}
+			],
+			"expectedOutput": [
+				{
+					"customerId": 1,
+					"customerName": "Anindya",
+					"fatherName": "Ratan",
+					"address": "22222hkhaskh",
+					"contactNumber": "868686876",
+					"loan": 15.0,
+					"customerTransactionByDay": 0.0,
+					"customerTransactionByMonth": 0.0,
+					"customerTransactionByYear": 0.0,
+					"customerMostBought": ""
+				}
+			]
+		},
+		{
+			"scenarioId": "CST06",
+			"scenario": "testGetAllCustomersForTransactionsByDay",
+			"inputParameters": [],
+			"mockedData": [
+				{
+					"id": 1,
+					"name": "Anindya",
+					"fatherName": "Ratan",
+					"address": "22222hkhaskh",
+					"contactNumber": "868686876",
+					"transactions": [
+						{"amount": 10.0}, {"amount": 5.0}
+					]
+				}
+			],
+			"expectedOutput": [
+				{
+					"customerId": 1,
+					"customerName": "Anindya",
+					"fatherName": "Ratan",
+					"address": "22222hkhaskh",
+					"contactNumber": "868686876",
+					"loan": 0.0,
+					"customerTransactionByDay": 15.0,
+					"customerTransactionByMonth": 0.0,
+					"customerTransactionByYear": 0.0,
+					"customerMostBought": ""
+				}
+			]
+		},
+		{
+			"scenarioId": "CST05",
+			"scenario": "testGetCustomersByContactNumberForNoResults",
+			"inputParameters": [{"criteriaName": "contactNumber", "criteriaValue": "868686877"}],
+			"mockedData": [{}],
+			"expectedOutput": [{}]
+		}
+	]
+}
